@@ -13,5 +13,20 @@
         <servlet-name>FirstServlet</servlet-name>
         <url-pattern>/myfirstsevrlet</url-pattern>
     </servlet-mapping>
+    <context-param>
+        <param-name>Global</param-name>
+        <param-value>ValueToAll</param-value>
+    </context-param>
+    <!-- other stuff including servlet declarations -->
+    <servlet>
+        <servlet-name>ParamServletTests</servlet-name>
+        <servlet-class>TestInitParams</servlet-class>
+        <init-param>
+            <param-name>ServletSpecific</param-name>
+            <param-value>ServletValue</param-value>
+        </init-param>
+    </servlet>
+
 </web-app>
+
 
