@@ -3,16 +3,7 @@
 <html>
 <head>
     <title>Product List</title>
-    <style>
-        table, td, th {
-            border: 1px solid;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <h1>Product List</h1>
@@ -22,6 +13,7 @@
         <th>Id</th>
         <th>Product Name</th>
         <th>Price</th>
+        <th>Image</th>
         <th>Action</th>
     </tr>
     <c:forEach var="product" items="${productList}">
@@ -29,6 +21,7 @@
             <td>${product.id}</td>
             <td>${product.productName}</td>
             <td>${product.price}</td>
+            <td><img src="${product.imageUrl}" alt="Product Image" class="image-container"></td>
             <td>
                 <a class="button" href="products?action=edit&id=${product.id}">Edit</a>
                 <a class="button" href="products?action=delete&id=${product.id}" onclick="return confirm('Are you sure you want to delete this product?')">Delete</a>
